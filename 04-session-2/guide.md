@@ -1,6 +1,6 @@
-# Session 2 Facilitator Guide
+# Session 2 Facilitator Guide [WIP]
 **Duration:** 2 hours | **Group:** 3 people
-**Prerequisite:** Between-sessions solo task completed
+**Prerequisite:** Between-sessions solo task and Session 2 setup completed
 
 ---
 
@@ -8,6 +8,7 @@
 
 - [ ] Copy `workshop-plugin/` into each person's project repo (or have them do it as step 0)
 - [ ] Test Figma MCP on your own machine end-to-end
+- [ ] Confirm everyone completed `03-between-sessions/session-2-setup.md` (Figma MCP connected)
 - [ ] Have the reference Figma design file open (the Plugin UI frame)
 - [ ] Know the Figma file URL (you'll share it)
 - [ ] Have `manifest.json` docs URL bookmarked (in case questions come up)
@@ -26,63 +27,28 @@ Three outcomes:
 
 ---
 
-## 0:10–0:35 — Figma MCP Setup (25 min)
+## 0:10–0:20 — Verify Figma MCP (10 min)
 
-**Goal:** CC can read their Figma design.
+**Goal:** Confirm everyone's Figma MCP connection works.
 
-### Figma side (5 min)
+This was set up in the Session 2 pre-work (`03-between-sessions/session-2-setup.md`).
 
-1. Open the workshop design file in Figma desktop (not browser)
-2. Top menu → `Plugins → Development → Open MCP Server`
-3. Figma will show a port number (usually `3845`) — note it
-
-### VSCode side (20 min)
-
-In their project folder, create `.claude/mcp.json`:
-
-```bash
-mkdir -p .claude
-```
-
-Then open the file and paste:
-
-```json
-{
-  "mcpServers": {
-    "figma": {
-      "command": "npx",
-      "args": ["-y", "figma-developer-mcp", "--figma-api-key=THEIR_KEY", "--port=3845"]
-    }
-  }
-}
-```
-
-Where to get the Figma API key:
-1. Figma → top-left menu → Help and account → Account settings
-2. Scroll to "Personal access tokens"
-3. Generate a new token, copy it
-4. Paste it into `mcp.json` replacing `THEIR_KEY`
-
-Restart CC:
-
-```bash
-claude
-```
-
-Test it:
+Ask each person to start CC and test:
 
 ```
-Use the Figma MCP to describe the "Plugin UI" frame in my design file.
+Describe the "Plugin UI" frame in my Figma file
 ```
 
-Paste the Figma file URL when CC asks. If CC describes the frame — MCP is working.
+Three outcomes:
+- ✓ CC describes the design → move on
+- Auth expired → re-authenticate: type `/mcp` in CC, select "figma", click Authenticate
+- Not set up → do it now: `claude mcp add --transport http --scope user figma https://mcp.figma.com/mcp`, restart CC, authenticate
 
-**Common failure:** Figma desktop isn't running or MCP server isn't started.
-Fix: make sure Figma is open and the MCP server is running (check Plugins menu).
+This should be quick since they did it as pre-work. Budget extra time only if someone didn't.
 
 ---
 
-## 0:35–1:00 — Planning the Plugin (25 min)
+## 0:20–0:45 — Planning the Plugin (25 min)
 
 **Goal:** A written, CC-approved plan before a single line of code is written.
 
@@ -113,7 +79,7 @@ Approve the plan when it looks right. CC will ask for confirmation before writin
 
 ---
 
-## 1:00–1:40 — Building the Plugin (40 min)
+## 0:45–1:30 — Building the Plugin (45 min)
 
 **Goal:** Working plugin, tested in Figma.
 
@@ -158,7 +124,7 @@ Budget up to 15 minutes for debugging.
 
 ---
 
-## 1:40–1:50 — Commit and Push (10 min)
+## 1:30–1:40 — Commit and Push (10 min)
 
 Everyone commits their working plugin:
 
@@ -176,7 +142,7 @@ Write a commit message for the changes we just made.
 
 ---
 
-## 1:50–2:00 — Publish to Figma (10 min)
+## 1:40–1:55 — Publish to Figma (15 min)
 
 **Goal:** Plugin is published to your org (private) or their personal account.
 
@@ -189,7 +155,7 @@ If time is short, skip and do async — publishing is mechanical and doesn't req
 
 ---
 
-## Wrap-up (last 2 min)
+## 1:55–2:00 — Wrap-up (5 min)
 
 > "You built a real, published Figma plugin. You used CC to write all the code.
 > You used git and GitHub to track your work. You used Figma MCP to share a design.

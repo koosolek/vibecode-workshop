@@ -1,4 +1,4 @@
-# Between Sessions: Solo Task
+# Between Sessions: Solo Task [WIP]
 
 This takes about 10 minutes. Do it before Session 2.
 

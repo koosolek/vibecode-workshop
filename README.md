@@ -18,22 +18,24 @@ Figma component (24×24, transparent fill, Shape layer, correct naming).
 ## Files
 
 ```
-pre-work/checklist.md         → send to participants 3+ days before Session 1
-session-1/guide.md            → facilitator guide for Session 1
-between-sessions/solo-task.md → independent task to do between sessions
-session-2/guide.md            → facilitator guide for Session 2
-workshop-plugin/PRD.md        → plugin spec — pre-seed this in participant repos before Session 2
-workshop-plugin/CLAUDE.md     → CC instructions for the plugin project
+01-pre-work/checklist.md                → send to participants 3+ days before Session 1
+02-session-1/guide.md                   → facilitator guide for Session 1
+03-between-sessions/solo-task.md        → independent task to do between sessions
+03-between-sessions/session-2-setup.md  → Figma design prep + MCP setup before Session 2
+04-session-2/guide.md                   → facilitator guide for Session 2
+04-session-2/workshop-plugin/PRD.md     → plugin spec — pre-seed this in participant repos before Session 2
+04-session-2/workshop-plugin/CLAUDE.md  → CC instructions for the plugin project
 ```
 
 ## Before Session 1
 
-- Send `pre-work/checklist.md` to all participants
+- Send `01-pre-work/checklist.md` to all participants
 - Verify everyone has completed it (5-min check at session start)
 - Have a GitHub org or personal account ready to demo pushing to
 
 ## Before Session 2
 
-- Copy `workshop-plugin/` into each participant's project repo
+- Copy `04-session-2/workshop-plugin/` into each participant's project repo
+- Send `03-between-sessions/session-2-setup.md` to all participants
 - Confirm Figma MCP is working on your own machine (test it)
 - Have the reference Figma design file open and shared with participants
