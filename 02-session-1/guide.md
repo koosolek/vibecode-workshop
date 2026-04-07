@@ -148,13 +148,20 @@ but the chat history stays linked to the original path.
 sidebar shows up in Terminal (`claude --resume`) and in the Claude desktop app.
 They all share the same history — pick whichever interface feels right.
 
-### 2. Git — your project's real memory
+### 2. Git vs GitHub — your project's real memory
 
-While CC chats can break if you move a folder, git doesn't care where the folder
-lives. Your entire project history — every commit, every change — travels with
-the folder. Move it, rename it, put it on a USB stick — `git log` still works.
-GitHub is just a remote copy. This is why we commit often: git is the durable
-record, CC chats are the working conversation.
+**Git** is a tool that runs on your Mac. It tracks every change you make to your
+project — like an unlimited undo history. All of that history lives inside your
+project folder (in a hidden `.git` folder). It doesn't need the internet. Move
+the folder, rename it, put it on a USB stick — `git log` still works.
+
+**GitHub** is a website where you can upload a copy of your git project. It's
+useful when you want to share code with others, back it up online, or collaborate.
+But it's optional — if you're working alone on a quick prototype, you can just
+use git locally and never push to GitHub. The project still has full history.
+
+We'll use both in this workshop to practice the full workflow, but remember:
+git is the durable record, GitHub is the optional sharing layer.
 
 ### 3. CLAUDE.md — Project memory
 - A markdown file that CC reads automatically at the start of every session
