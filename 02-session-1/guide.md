@@ -36,12 +36,10 @@ Walk through, have them follow along on their machines:
 
 2. **The panels**
    - Left sidebar icons: Explorer, Search, Source Control (git), Extensions
-   - Bottom panel: Terminal (open with `` Ctrl+` ``)
    - Right panel: comes to life with extensions
 
 3. **Command Palette** — the most important thing in VSCode
    - `Cmd + Shift + P` → type anything
-   - Demo: type "terminal" → "Create New Terminal"
    - Demo: type "theme" → "Color Theme" → let them pick one
 
 4. **Split view**
@@ -50,7 +48,14 @@ Walk through, have them follow along on their machines:
 
 5. **The Claude Code sidebar**
    - Click the Claude icon in the left sidebar
+   - This is where you'll talk to CC — it's your AI chat panel
    - Show it, but don't start a chat yet
+
+**Explain the two-app setup:**
+> "From now on, you'll always have two apps open side by side:
+> **VSCode** for chatting with CC and viewing files, and
+> **Terminal** for running commands. Think of it this way —
+> VSCode is where you talk, Terminal is where you do."
 
 **Pause:** Any questions about VSCode? Let them explore for 2 minutes.
 
@@ -60,7 +65,7 @@ Walk through, have them follow along on their machines:
 
 **Goal:** Project home folder exists, GitHub is authenticated.
 
-In VSCode terminal, everyone runs:
+In Terminal (the Mac app), everyone runs:
 
 ```bash
 mkdir ~/Code
@@ -94,21 +99,17 @@ git config --global user.email "their@email.com"
 
 **Goal:** Everyone has talked to CC, understands the basic interaction model.
 
-In terminal:
+Have everyone open the Claude Code sidebar in VSCode (click the Claude icon).
+Make sure VSCode has the `~/Code` folder open (`File → Open Folder → ~/Code`).
 
-```bash
-cd ~/Code
-claude
-```
-
-CC starts. Ask them to type (not paste — makes it more hands-on):
+CC starts in the sidebar. Ask them to type (not paste — makes it more hands-on):
 
 ```
 What is Claude Code and how is it different from using Claude in a browser?
 ```
 
 Read the answer together. Point out:
-- CC is in their terminal, in their project
+- CC is right here in their editor, in their project
 - It can read and write files on their machine
 - It's not just chat — it's an agent
 
@@ -123,31 +124,29 @@ After the answer, explain in your own words:
 > It can only hold so much at once. This is why we'll use CLAUDE.md — to keep
 > important instructions available without eating context."
 
-Type `/exit` or `Ctrl+C` to quit CC.
-
 ---
 
 ## 1:15–1:40 — CC Concepts (25 min)
 
-**Goal:** They understand the 3 types of memory/context in CC.
+**Goal:** They understand how CC keeps context and the key interaction patterns.
 
 Open a browser, navigate to Claude Code docs or explain verbally with examples:
 
 ### 1. Conversations (chat sessions)
-- Each `claude` run is a session
-- Resume a previous session: `claude --continue` (last session) or `claude --resume` (pick one)
+- Each chat in the CC sidebar is a session
+- You can start new sessions or pick up old ones from the sidebar
+- In Terminal, you can also resume sessions: `claude --continue` (last session)
+  or `claude --resume` (pick from a list)
 - Sessions are stored in `~/.claude/projects/`
-- Demo: quit CC, run `claude --continue` — it picks up where you left off
 
 **Chats are tied to the folder path.** CC links conversations to the exact folder
 location on your Mac. If you move or rename a project folder, CC won't find
 the old chats — it'll start fresh. Your code and git history are fine (see below),
 but the chat history stays linked to the original path.
 
-**You can continue chats across tools.** A chat started in the VSCode sidebar
-can be resumed in Terminal with `claude --resume`, and vice versa. The Claude
-desktop app can also continue these same chats. They all share the same history
-— pick whichever interface feels right in the moment.
+**Chats are shared across all CC interfaces.** A chat started in the VSCode
+sidebar shows up in Terminal (`claude --resume`) and in the Claude desktop app.
+They all share the same history — pick whichever interface feels right.
 
 ### 2. Git — your project's real memory
 
@@ -172,11 +171,11 @@ from your home folder down to the project folder. This lets you layer instructio
 
 CC merges them — root-level rules apply everywhere, project-level rules add on top.
 
-- Demo: create a `CLAUDE.md` in `~/Code` with one line:
+- Demo: In VSCode, create a new file called `CLAUDE.md` in `~/Code` and type:
   ```
   Always write commit messages in lowercase.
   ```
-  Start a new CC session in `~/Code/my-first-project`, ask:
+  Save it. Then in the CC sidebar, start a new chat and ask:
   "What are your instructions for this project?"
   CC should mention the lowercase rule — even though the file is one level up.
 
@@ -184,6 +183,18 @@ CC merges them — root-level rules apply everywhere, project-level rules add on
 - You can pull any file into context with `@filename`
 - Example: `@README.md summarize this project`
 - Useful for: sharing a design spec, pointing CC at a specific file to edit
+- In VSCode, CC also sees files you have open in the editor — so just opening
+  a file is often enough, no `@` needed
+
+### 5. Slash commands
+- Type `/` in CC to see available commands
+- Key ones to know:
+  - `/help` — see what's available
+  - `/mcp` — manage MCP connections (we'll use this in Session 2 for Figma)
+  - `/compact` — compress the conversation when context gets long
+  - `/clear` — start a fresh conversation
+- Demo: type `/` and let them scroll through the list. No need to memorize —
+  just know the `/` menu exists.
 
 ### Summarize:
 | Type | What it is | When to use |
@@ -192,6 +203,7 @@ CC merges them — root-level rules apply everywhere, project-level rules add on
 | Git | Permanent project history | Every meaningful change — your durable record |
 | CLAUDE.md | Persistent project instructions | Rules and conventions that never change |
 | @ files | Pull a specific file into context | When CC needs to see or edit something |
+| / commands | Built-in shortcuts | Quick actions without leaving the chat |
 
 ---
 
@@ -199,16 +211,15 @@ CC merges them — root-level rules apply everywhere, project-level rules add on
 
 **Goal:** First real project, first commit, pushed to GitHub.
 
-Everyone runs in terminal:
+In Terminal, everyone creates the project folder:
 
 ```bash
 cd ~/Code
 mkdir my-first-project
-cd my-first-project
-claude
 ```
 
-Now they instruct CC (have them type it themselves):
+Then in VSCode: `File → Open Folder` → navigate to `~/Code/my-first-project`.
+Open the CC sidebar and type (have them type it themselves):
 
 ```
 Help me set up this folder as a new project. Initialize git, create a README.md
@@ -219,6 +230,7 @@ CC will guide them through it. Let it. Your job is to narrate what CC is doing:
 - "See how it's writing the README? You didn't write a single line."
 - "Now it's running `git init` — you could have typed that, but you didn't have to."
 - "Watch the commit message — CC writes it for you."
+- "Look at the file explorer on the left — the files are appearing as CC creates them."
 
 If CC asks to run `gh repo create` — approve it.
 
