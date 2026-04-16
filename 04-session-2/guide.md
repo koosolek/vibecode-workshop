@@ -17,22 +17,28 @@
 
 **Goal:** CC can read Figma designs and Jira tickets.
 
+Everyone opens Terminal and starts CC:
+
+```bash
+claude
+```
+
 Share the Figma MCP docs:
 - https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/
 
 For Atlassian, have them discover it themselves:
-- In the CC sidebar, type `/plugin`, go to the **Discover** tab, search for "atlassian"
+- In CC, type `/plugin`, go to the **Discover** tab, search for "atlassian"
 
 Ask them to read the instructions and set up both. They can ask CC for help if
 they get stuck — that's part of the exercise.
 
 ### Verify
 
-Once everyone's done, test both connections:
+Once everyone's done, test both connections in the same CC session:
 - Ask CC to describe their Figma project template file
 - Share the PRD ticket → ask CC to summarize `PUPCLD-3339` (https://perforce.atlassian.net/browse/PUPCLD-3339)
 
-If both work, move on. Help anyone who's stuck.
+If both work, exit CC (`/exit`) and move on. Help anyone who's stuck.
 
 ---
 
