@@ -17,7 +17,15 @@
 
 **Goal:** CC can read Figma designs and Jira tickets.
 
-Everyone opens Terminal and starts CC:
+Quick check — everyone runs in Terminal:
+
+```bash
+pnpm --version
+```
+
+If anyone doesn't have it: `sudo npm install -g pnpm`
+
+Then start CC:
 
 ```bash
 claude
@@ -52,7 +60,7 @@ In Terminal, everyone clones the starter template:
 cd ~/Code
 git clone https://github.com/koosolek/pd-perforce-prototype-starter my-prototype
 cd my-prototype
-npm install
+pnpm install
 ```
 
 In VSCode: `File → Open Folder` → `~/Code/my-prototype`.
@@ -102,7 +110,7 @@ First, run the starter to see the default state. In Terminal:
 
 ```bash
 cd ~/Code/my-prototype
-npm run dev
+pnpm dev
 ```
 
 Open the URL shown in Terminal (usually `http://localhost:...`) in a browser.
@@ -163,8 +171,8 @@ cd [repo name]
 Run the project and open in a browser:
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 Check the browser — this is the shared project's current state.

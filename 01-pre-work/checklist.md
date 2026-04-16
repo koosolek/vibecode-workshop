@@ -80,10 +80,28 @@ You should see a version number. If you see an error, message [facilitator].
 
 ---
 
-## 6. Install Homebrew
+## 6. Install pnpm
+
+In Terminal:
+
+```
+sudo npm install -g pnpm
+```
+
+Verify it worked:
+
+```
+pnpm --version
+```
+
+You should see a version number like `9.x.x`.
+
+---
+
+## 7. Install Homebrew
 
 > Skip this step if already installed. To check, run `brew --version` in Terminal.
-> If you see a version number, skip to step 7.
+> If you see a version number, skip to step 8.
 
 In Terminal, paste this and press Enter:
 
@@ -101,7 +119,7 @@ brew --version
 
 ---
 
-## 7. Install GitHub CLI
+## 8. Install GitHub CLI
 
 In Terminal:
 
@@ -117,14 +135,14 @@ gh --version
 
 ---
 
-## 8. Create a GitHub account
+## 9. Create a GitHub account
 
 Go to https://github.com and sign up if you don't have an account.
 Remember your username and the email you used.
 
 ---
 
-## 9. Authenticate GitHub CLI
+## 10. Authenticate GitHub CLI
 
 In Terminal:
 
@@ -141,7 +159,7 @@ When it says "Logged in as [your username]" — you're done.
 
 ---
 
-## 10. Configure git identity
+## 11. Configure git identity
 
 In Terminal (replace with your actual name and GitHub email):
 
@@ -159,9 +177,10 @@ Run these in Terminal — each should return a version number, not an error:
 ```
 node --version
 npm --version
+pnpm --version
 claude --version
 gh --version
 git --version
 ```
 
-If all five work, you're ready. See you at the workshop.
+If all six work, you're ready. See you at the workshop.
