@@ -76,7 +76,7 @@ In the CC sidebar (already in `my-prototype`):
 ```
 Read the PRD at PUPCLD-3339. 
 Then search the design system libraries [library URL] & [library URL] for relevant components.
-Create a design for the Finance Dashboard feature in my Figma file at [file URL], using design system
+Create a design for the Finance Dashboard feature in my Figma file at [frame URL], using design system
 components where possible.
 ```
 
