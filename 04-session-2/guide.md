@@ -54,11 +54,11 @@ If both work, exit CC (`/exit`) and move on. Help anyone who's stuck.
 
 **Goal:** Everyone has the starter template cloned and open in VSCode, ready for work.
 
-In Terminal, everyone clones the starter template:
+In Terminal, everyone creates their own repo from the starter template:
 
 ```bash
 cd ~/Code
-git clone https://github.com/koosolek/pd-perforce-prototype-starter my-prototype
+gh repo create my-prototype --template koosolek/pd-perforce-prototype-starter --clone --public
 cd my-prototype
 pnpm install
 ```
@@ -144,15 +144,16 @@ The prototype shows [describe what happened]. Fix it.
 
 **Goal:** Reinforce the git workflow from Session 1.
 
-In the CC sidebar, ask:
+The GitHub repo already exists from the template step. In the CC sidebar:
 
 ```
-Set up git for this project, commit everything, and create a GitHub repo for it.
+Commit all the changes and push to GitHub.
 ```
 
-Have everyone check their new repo on GitHub.
+Have everyone check their repo on GitHub — they should see the new commits.
 
-> "Same thing you did in Session 1 — project folder to GitHub in one prompt."
+> "The repo was already set up when you created it from the template.
+> Now you're just pushing your work."
 
 ---
 
