@@ -74,9 +74,9 @@ PRD ticket: https://perforce.atlassian.net/browse/PUPCLD-3339
 In the CC sidebar (already in `my-prototype`):
 
 ```
-Read the PRD at PUPCLD-3339. Then search the design system libraries available
-in my Figma file for relevant components. Create a design for the Finance
-Dashboard feature in my Figma file at [their file URL], using design system
+Read the PRD at PUPCLD-3339. 
+Then search the design system libraries [library URL] & [library URL] for relevant components.
+Create a design for the Finance Dashboard feature in my Figma file at [file URL], using design system
 components where possible.
 ```
 
