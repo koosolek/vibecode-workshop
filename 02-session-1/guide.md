@@ -245,14 +245,6 @@ At the end, have everyone open their GitHub profile in a browser and show their 
 
 **Close:**
 > "This is the loop. You describe what you want, CC does it, you review and approve.
-> In Session 2 we'll use this same loop to build a Figma plugin from a design."
+> In Session 2 we'll connect CC to Figma and Jira, create a design, and build
+> a prototype — same loop, bigger project."
 
----
-
-## Send before they leave
-
-Hand them (or Slack):
-- `03-between-sessions/solo-task.md` — 10-minute CC + git task
-- `03-between-sessions/session-2-setup.md` — Figma design prep + MCP setup (15–20 min)
-
-Remind them: do both before Session 2.

@@ -1,30 +1,29 @@
 # VibeCode Workshop
 
-2-session Claude Code onboarding for a team of 3. Participants finish with a working,
-published Figma plugin they built themselves — with Claude Code doing the heavy lifting.
+2-session Claude Code onboarding for a team of 3. Participants finish with a
+design-to-prototype workflow and real GitHub collaboration experience — with
+Claude Code doing the heavy lifting.
 
-## What participants build
+## What participants do
 
-A Figma plugin that converts a selected icon frame into a clean, properly structured
-Figma component (24×24, transparent fill, Shape layer, correct naming).
+- Connect CC to Figma and Jira via MCP
+- Create a Figma design from a PRD, using a component library
+- Build a working prototype from that design
+- Collaborate on a shared GitHub project using branches and merges
 
 ## Sessions
 
 | Session | Duration | Focus |
 |---------|----------|-------|
 | Session 1 | 2 hours | VSCode, GitHub auth, Claude Code fundamentals, Git basics |
-| Session 2 | 2 hours | Figma MCP, planning + building the plugin, publishing |
+| Session 2 | 2 hours | Figma + Atlassian MCP, design from PRD, prototype, GitHub collaboration |
 
 ## Files
 
 ```
-01-pre-work/checklist.md                → send to participants 3+ days before Session 1
-02-session-1/guide.md                   → facilitator guide for Session 1
-03-between-sessions/solo-task.md        → independent task to do between sessions
-03-between-sessions/session-2-setup.md  → Figma design prep + MCP setup before Session 2
-04-session-2/guide.md                   → facilitator guide for Session 2
-04-session-2/workshop-plugin/PRD.md     → plugin spec — pre-seed this in participant repos before Session 2
-04-session-2/workshop-plugin/CLAUDE.md  → CC instructions for the plugin project
+01-pre-work/checklist.md   → send to participants 3+ days before Session 1
+02-session-1/guide.md      → facilitator guide for Session 1
+04-session-2/guide.md      → facilitator guide for Session 2
 ```
 
 ## Before Session 1
@@ -35,7 +34,8 @@ Figma component (24×24, transparent fill, Shape layer, correct naming).
 
 ## Before Session 2
 
-- Copy `04-session-2/workshop-plugin/` into each participant's project repo
-- Send `03-between-sessions/session-2-setup.md` to all participants
-- Confirm Figma MCP is working on your own machine (test it)
-- Have the reference Figma design file open and shared with participants
+- Have a Figma component library ready to share
+- Have a PRD in Jira ready to share
+- Create an empty Figma file for each participant (or one shared file with pages per person)
+- Create a shared GitHub project repo and add participants as collaborators
+- Test Figma MCP + Atlassian plugin on your own machine end-to-end
