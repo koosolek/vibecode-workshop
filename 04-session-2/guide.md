@@ -104,9 +104,9 @@ When CC finishes, have everyone review their design in Figma.
 
 ## 0:55–1:25 — Build a Prototype (30 min)
 
-**Goal:** A working prototype built from the design, using the Perforce prototype starter.
+**Goal:** A working prototype built from the design that CC created in Figma, using the Perforce prototype starter.
 
-First, run the starter to see the default state. In Terminal:
+First, run the starter to see the default state. In a new Terminal window:
 
 ```bash
 cd ~/Code/my-prototype
@@ -119,16 +119,16 @@ This is the default starter state — everyone should see the same thing.
 > "This is your starting point. Now we'll ask CC to transform it into
 > the design you just created."
 
-In the CC sidebar (still in `my-prototype`):
+In VSCode CC sidebar (make sure you have `my-prototype` project opened in the VSCode window) type something like:
 
 ```
-Look at my Figma design at [their file URL]. Apply this design to the
+Look at my Figma design at [file URL]. Apply this design to the
 prototype in this project. The project is already set up — just modify
 the existing files to match the design.
 ```
 
 CC will update the existing files to match their Figma design.
-When it's ready, run the dev server and check in a browser.
+When it's ready, check the dev server in a browser to see the results.
 
 **If something breaks:**
 
