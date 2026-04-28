@@ -1,0 +1,103 @@
+workshop todo
+- add info about claude login
+- switch to terminal chat in cc vscode plugin – welcome screen vs cc plugin settings
+- claude vscode plugin info
+- git vs github logic – needs a few files before
+- 
+
+Meeting assets for Vibe coding workshop part I
+
+Meeting summary
+
+Quick recap
+This was a workshop session focused on learning Cloud Code, where Mihkel guided participants through setting up and using Claude's VS Code integration for software development workflows. The session covered installing and configuring Cloud Code, creating a new Git repository, initializing a project with a simple HTML file, and performing version control operations including commits and pushes to GitHub. Participants encountered various technical issues during the setup process, including authentication problems and interface differences, but were able to work through them with Mihkel's assistance. The workshop also introduced the concept of Claude MD files for documenting project context and decisions, though some participants experienced challenges with file visibility and repository configuration.
+Next steps
+Mihkel: Schedule a follow-up workshop session for next week (if time allows).
+Summary
+Claude Usage Monitoring Workshop
+The meeting began with technical difficulties as Ashley experienced camera and login issues on her computer. Mihkel and others discussed their experiences with frequent re-login requirements due to various system updates. Mihkel then shared his work on creating a terminal app to monitor Claude usage limits, which he had recently discovered and implemented. The group prepared to start a workshop on using Claude, with Mihkel acknowledging he had updated the pre-work materials but hadn't fully rehearsed the new version. The session ended with Mihkel beginning to guide the group through opening the terminal and using Claude, demonstrating the new usage monitoring feature he had developed.
+Claude Login Setup Session
+Mihkel guided Alyssa through the process of logging into Claude, including selecting the account with subscription option and using SSO login with her Perforce email address. They encountered some technical difficulties with authenticating through the terminal and browser, with Mihkel providing step-by-step instructions for copying and pasting URLs between the terminal and browser windows. The session ended with Mihkel suggesting they try pasting the URL again to complete the login process.
+VS Code with Claude Setup
+The team discussed setting up and using VS Code with Claude, addressing technical issues like OneDrive access permissions and terminal configurations. Jake explained how Claude's access to OneDrive folders works when launched from specific directories, suggesting to change the starting location rather than moving files. Mihkel guided the group through VS Code's interface, including the file browser, source control section, and extensions, with a specific focus on installing the Cloud Code plugin for Claude.
+Cloud Code Extension Setup Guide
+Mihkel guided the team through setting up the Cloud Code extension in VS Code, helping participants troubleshoot installation issues and switch to the terminal interface. The team then worked on creating a "code" folder structure in their file system to organize future code projects. Mihkel demonstrated how to navigate to this folder using the terminal command "CD" and suggested using Finder to drag and paste folder paths into the terminal for easier navigation.
+Cloud Code Navigation and Chats
+Mihkel explained how to navigate to specific code folders using Terminal and demonstrated the Cloud Code plugin in VS Code. He showed how chats with Claude are tied to specific folders, allowing project-specific discussions while maintaining separate chat histories. Jake emphasized the importance of isolating projects for security reasons and to prevent unintended changes across different projects. The discussion clarified that once a chat is started in a specific folder, users cannot navigate away without closing and reopening in a different folder.
+Git and GitHub Workshop Improvements
+Mihkel demonstrated different ways to open project folders in Visual Studio Code and discussed the need for improvements in the workshop content. He explained the basics of Git and GitHub, highlighting their importance for version control and collaboration. Joe emphasized the significance of understanding fundamental Git and GitHub concepts, suggesting resources for further learning if needed. Mihkel planned to include a practical exercise on Git and GitHub in the workshop to address the identified gaps in the content.
+GitHub and Cloud Code Workshop
+Mihkel led a workshop session on using GitHub and Cloud Code, guiding participants through initializing a Git repository and creating a simple HTML file. The session encountered some technical difficulties as not all participants could see the expected file structure in VS Code's Explorer view, despite being able to see the source code. Mihkel suggested troubleshooting steps, including asking Cloud Code to create the HTML file directly through the chat interface, which should appear in the Explorer once permissions are granted.
+VS Code and Claude Setup
+Mihkel guided the team through setting up a project in VS Code and using Claude for development. He explained how to access and share files between VS Code and a browser, and demonstrated the use of slash commands, particularly the init command to create a Claude MD file. Mihkel addressed concerns about moving folders and breaking cloud chats, explaining that while chats are disposable, the MD files provide a more reliable way to store project knowledge. The team discussed the importance of understanding these tools and spending time exploring them outside of working sessions to build mental models of how they work.
+Claude Documentation Workflow Training
+Mihkel explained how to use Claude's chat functionality and Markdown files (.claud.md) for project documentation. He demonstrated that chats are saved but can be compressed over time, requiring new chats for different features or milestones. Mihkel showed how to manage multiple chats using terminal commands and the "resume" slash command to cycle through saved conversations. Joe clarified that MD stands for Markdown, a common file format used in engineering, and Mihkel shared his practice of creating level-specific Markdown files at different folder levels to organize project documentation and configuration rules.
+Cloud File Organization and Git
+Mihkel explained the structure for organizing cloud.md files, suggesting they should be placed at the folder level rather than individual file level, with general rules in the main code folder and project-specific details in subfolders. The team then practiced making initial Git commits through Claude, with Mihkel guiding them through the process and explaining that Claude automatically determines which files to commit. Finally, they attempted to push their committed changes to GitHub, with Mihkel demonstrating how to create a new private repository and explaining the importance of providing informative commit messages for code projects.
+GitHub Collaboration and Version Control
+The team discussed GitHub repository sharing and collaboration features, with Mihkel explaining how to add collaborators through repository settings. Alyssa successfully created and pushed a new repository to GitHub after troubleshooting authentication issues. The group then practiced making changes to their HTML files, including adding blinking text and a calendar, and discussed how to preview changes in the chat using Claude. Mihkel guided the team through the process of making a second commit to demonstrate the version control workflow, showing how to view differences between commits in the source control view.
+GitHub Workflow and Permissions
+Mihkel and Joe discussed issues with committing code to GitHub, including a stalled process and the need for a commit message. Mihkel explained the proper workflow for committing and pushing changes to GitHub, emphasizing the importance of using Claude for commit messages. Alyssa asked about sharing permissions for GitHub repositories, and Mihkel clarified that private repositories require specific permissions to edit, while public repositories allow forking but not direct editing. The group agreed to use the Air Force GitHub organization for future projects to simplify sharing access with engineers.
+
+
+Meeting assets for Vibe coding workshop part II
+
+Meeting summary
+
+Quick recap
+
+Mihkel led a workshop session focused on using Claude for design and development workflows, specifically working with Figma and the prototype starter kit. The session involved setting up Figma MCP and Atlassian plugins, installing PNPM, and configuring the prototype environment. Participants encountered various technical challenges with authentication and plugin installation, particularly with Atlassian and Figma connections. The group then attempted to use Claude to design a financial dashboard in Figma based on product requirements, though the process was slow and required multiple prompts to achieve desired results. Despite some difficulties, the participants were able to successfully generate initial designs in Figma, with Claude making edits to frames and incorporating Force UI components. The session highlighted both the potential and current limitations of using AI tools like Claude for design work, with participants noting that while the results were promising, the process required significant trial and error and was still evolving.
+
+Next steps
+
+Next steps were not generated due to insufficient transcript.
+
+Summary
+
+Claude Performance and Workflow Planning
+
+Mihkel and Ashley discussed their experience with Claude's performance, noting that it was slow and not well-suited for visual tasks like storyboarding. Mihkel outlined a plan to work through a workflow involving design in Figma, implementation using Jake's prototype starter kit, and collaboration on a repository with branches. The session began with setting up Pnpm in the terminal as a prerequisite for running the prototype starter kit.
+
+NPM Permissions Troubleshooting Session
+
+Mihkel and Alyssa worked together to troubleshoot permissions errors related to NPM updates. They discovered that running commands with sudo access and opening a new terminal window resolved the initial permission issues. Mihkel then guided Alyssa through the process of installing the Figma MCP and Atlassian plugin using Cloud Code, with instructions provided through a shared document.
+
+Claude and Atlassian Plugin Setup
+
+Mihkel guided Alyssa and Abhishek through the process of installing and setting up Claude and the Atlassian plugin. Mihkel advised Alyssa to ignore the auto-update failure message and confirmed that allowing terminal access to files and data from other apps was safe. Abhishek confirmed that the Atlassian plugin installation was proceeding well, and Mihkel clarified that the user scope option should be selected for the plugin. Mihkel also explained that slash commands in the cloud context, like MCP, need to be run within the Claude studio rather than in terminal.
+
+Claude Authentication Troubleshooting Session
+
+Mihkel and Alyssa discussed troubleshooting authentication issues with Claude and its integrations with Atlassian and Figma. Mihkel guided Alyssa through the process of authenticating the MCPs, including navigating to the correct sites and accepting permissions. They encountered some technical difficulties with VS Code, but were able to resolve the authentication issues by running Claude in a terminal window and following the necessary steps for each integration.
+
+Atlassian Plugin Installation Issues
+
+The team discussed issues with installing and accessing the Atlassian plugin for Claude. While Abhishek and Ashley successfully installed the plugin, Alyssa encountered problems. Mihkel guided Alyssa through the process of installing the plugin in the terminal, including commands like "/plugin" and "/reload plugins." The team also tested the Atlassian connection by asking Claude to summarize a shared ticket, which worked for some members but not for Alyssa initially. Mihkel suggested using the terminal instead of VS Code for the installation process.
+
+Claude Plugin and Project Setup
+
+Mihkel and the team discussed setting up plugins and accessing tickets in Claude. They confirmed that the Figma plugin was working and advised Alyssa to test the Atlassian MCP functionality. The team then moved on to setting up a prototype project using Jake's prototype starter kit, with Mihkel guiding them through the terminal commands to clone the repository. There was an issue with Alyssa's folder placement, which Mihkel helped troubleshoot by explaining the need to navigate to the correct code folder before running the cloning command.
+
+GitHub File Cloning Troubleshooting
+
+Mihkel and Alyssa discussed troubleshooting a file cloning issue in GitHub. They identified that the problem was due to a repository already existing both locally and on GitHub, which needed to be removed from GitHub before cloning again. Mihkel guided Alyssa through the process of navigating to the repository in GitHub and using Claude to clone the repository locally into the correct folder.
+
+Prototype Application Setup Instructions
+
+Mihkel guided the team through setting up and running a prototype application. He instructed Abhishek and Alyssa to navigate to the My Prototype folder in terminal and run the pnpm install command to install dependencies. They encountered an issue with port 3000 being already in use, which Mihkel suggested checking for other terminal instances to free up. Mihkel also explained how to verify they were in the correct folder by checking the username and computer name display in terminal before running the pnpm dev command to start the development server.
+
+PMP Prototype Setup and Transition
+
+Mihkel guided the team through setting up a prototype in PMP and transitioning to VS Code with the Cloud Code plugin. He instructed the team to copy a Figma project template to their drafts folder, with Mihkel offering to help Alyssa access the template due to some initial access issues. The team was then directed to use Claude to design views based on the product requirements document (PRD), with specific instructions for Abhishek and Alyssa on how to provide context to Claude for the design work.
+
+Claude Implementation for Design Work
+
+The team discussed implementing Claude for design work using Force UI libraries in Figma. Mihkel provided guidance on sharing the necessary links, including product requirements and component libraries, and explained how to set up the Figma frame for design work. Abhishek and Alyssa encountered some initial issues with the process, but Mihkel advised them on how to proceed by focusing on the Figma design rather than code components. The team noted that the Figma design changes process takes significantly more time than working with code.
+
+AI Figma Editing Tool Discussion
+
+The team discussed using an AI tool to edit a Figma file based on product requirements. Mihkel explained how to properly use the tool, emphasizing the need to specify which Figma file to edit and which design components to use. Ashley and Abhishek tested the tool, with Abhishek successfully creating a dashboard while Ashley encountered some issues. Mihkel noted that the latest version of the tool allows for dynamic prompt adjustments during the editing process. The team encountered some technical issues with CodeConnect, but Mihkel assured it shouldn't affect the overall process.
+
+AI Tools for Design Prototyping
+
+The team discussed using AI tools, specifically Claude, to edit Figma designs and create prototypes. Ashley and Alyssa shared their experiences using the tool, noting that while it can produce useful initial designs, it requires significant prompting and manual adjustments to achieve desired results. Mihkel explained that the tool works by generating code based on product requirement documents, which can then be integrated into existing prototypes. The team agreed that while the process is still somewhat unpredictable, practicing with the tool will help improve results over time.

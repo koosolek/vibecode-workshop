@@ -10,14 +10,17 @@ Claude Code by building and publishing a real Figma plugin.
 
 ## Structure
 
-- `01-pre-work/` — send to participants before the workshop
-- `02-session-1/` — facilitator guide for Session 1 (environment + CC fundamentals)
-- `04-session-2/` — facilitator guide for Session 2 (Figma + Atlassian MCP, design, prototype, collaboration)
+- `01-pre-work/` — send to participants before Session 1
+- `02-session-1/` — Session 1 walkthrough (environment + CC fundamentals)
+- `03-pre-work-session-2/` — send to participants before Session 2 (MCP setup + clone starter)
+- `04-session-2/` — Session 2 walkthrough (design, prototype, GitHub collaboration)
 - `ideas/` — future workshop content (e.g., Figma plugin build)
 
 ## Guidelines when working on this project
 
-- Participant-facing content: assume zero CLI, git, or coding experience
-- Facilitator guides: practical and step-by-step, not slide decks
-- Commands shown in guides must be copy-paste ready and tested
+- Session guides are participant-facing tutorials, not facilitator scripts.
+  Direct second person voice. Facilitator-only notes go in `> **For
+  facilitators:**` callouts.
+- Assume zero CLI, git, or coding experience
+- Commands shown must be copy-paste ready and tested
 - Keep session timing realistic — buffer for questions and small failures

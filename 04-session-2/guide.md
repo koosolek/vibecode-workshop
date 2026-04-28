@@ -1,85 +1,31 @@
-# Session 2 Facilitator Guide [WIP]
-**Duration:** 2 hours | **Group:** 3 people
-**Prerequisite:** Session 1 completed
+# Session 2 — Design, Prototype, Collaborate [WIP]
+**Duration:** ~1.5 hours (within a 2-hour session — extra time is buffer)
+**Prerequisite:** Session 1 completed and `03-pre-work-session-2/checklist.md`
+done (MCP integrations set up, prototype starter cloned)
+
+In this session you'll create a design from a real PRD, build a prototype
+based on that design, and collaborate with others on a shared GitHub project.
+
+> **For facilitators:**
+> - Confirm everyone completed `03-pre-work-session-2/checklist.md` before the session
+> - Have the PRD Jira ticket URL ready to share
+> - Have the shared GitHub project repo created and participants added as collaborators
+> - Verify your own MCP connections work end-to-end before the session
 
 ---
 
-## Before they arrive
+## 0:00–0:30 — Create a design from a PRD
 
-- [ ] Test Figma MCP + Atlassian plugin on your own machine end-to-end
-- [ ] Have each participant duplicate the Figma project template (see link below)
-- [ ] Have the PRD Jira ticket URL ready to share
-- [ ] Have the shared GitHub project repo created and participants added as collaborators
+Now you'll have CC create a Figma design based on a real PRD, using design
+system components.
 
----
-
-## 0:00–0:20 — MCP Setup (20 min)
-
-**Goal:** CC can read Figma designs and Jira tickets.
-
-Quick check — everyone runs in Terminal:
-
-```bash
-pnpm --version
-```
-
-If anyone doesn't have it: `sudo npm install -g pnpm`
-
-Then start CC:
-
-```bash
-claude
-```
-
-Share the Figma MCP docs:
-- https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/
-
-For Atlassian, have them discover it themselves:
-- In CC, type `/plugin`, go to the **Discover** tab, search for "atlassian"
-
-Ask them to read the instructions and set up both. They can ask CC for help if
-they get stuck — that's part of the exercise.
-
-### Verify
-
-Once everyone's done, test both connections in the same CC session:
-- Ask CC to describe their Figma project template file
-- Share the PRD ticket → ask CC to summarize `PUPCLD-3339` (https://perforce.atlassian.net/browse/PUPCLD-3339)
-
-If both work, exit CC (`/exit`) and move on. Help anyone who's stuck.
-
----
-
-## 0:20–0:25 — Set Up the Prototype Project (5 min)
-
-**Goal:** Everyone has the starter template cloned and open in VSCode, ready for work.
-
-In Terminal, everyone creates their own repo from the starter template:
-
-```bash
-cd ~/Code
-gh repo create my-prototype --template koosolek/pd-perforce-prototype-starter --clone --public
-cd my-prototype
-pnpm install
-```
-
-In VSCode: `File → Open Folder` → `~/Code/my-prototype`.
-
-> "This is the project CC will work in for the rest of the session.
-> The design work and the coding will all happen here."
-
----
-
-## 0:25–0:55 — Design from a PRD (30 min)
-
-**Goal:** A Figma design created by CC, based on the PRD and the design system libraries.
-
-Everyone opens their copy of the Figma project template:
+Open your copy of the Figma project template:
 https://www.figma.com/design/zVeRVzeF5J0sOq7ZjhdKQN/-PDUX-------Project-template
 
-PRD ticket: https://perforce.atlassian.net/browse/PUPCLD-3339
+The PRD: https://perforce.atlassian.net/browse/PUPCLD-3339
 
-In the CC sidebar (already in `my-prototype`):
+In VSCode: `File → Open Folder` → `~/Code/my-prototype` (the project you
+cloned in pre-work). Open the CC sidebar:
 
 ```
 Read the PRD at PUPCLD-3339. 
@@ -89,24 +35,22 @@ components where possible.
 ```
 
 CC will use the Figma MCP to read the PRD, search the linked libraries, and
-write into their file. Let it work. Narrate:
-- "CC is reading the requirements from Jira"
-- "Now it's searching the design system libraries for components it can use"
-- "It's creating the design directly in your Figma file"
+write into your file. Watch it work — you'll see CC reading the requirements,
+searching the libraries, then creating the design directly in your Figma file.
 
-When CC finishes, have everyone review their design in Figma.
+When CC finishes, review the design in Figma.
 
-**Why this matters to explain:**
-> "This is the design loop: requirements in Jira, components in Figma, CC connects
-> them. You review and refine — CC does the assembly."
+> **The design loop:** requirements live in Jira, components live in Figma, CC
+> connects them. You review and refine — CC does the assembly. Expect to
+> iterate: tell CC what to fix or add, and let it adjust.
 
 ---
 
-## 0:55–1:25 — Build a Prototype (30 min)
+## 0:30–1:00 — Build a prototype from your design
 
-**Goal:** A working prototype built from the design that CC created in Figma, using the Perforce prototype starter.
+Now you'll turn the Figma design into a working web prototype.
 
-First, run the starter to see the default state. In a new Terminal window:
+First, see what the starter looks like by default. In a new Terminal window:
 
 ```bash
 cd ~/Code/my-prototype
@@ -114,12 +58,10 @@ pnpm dev
 ```
 
 Open the URL shown in Terminal (usually `http://localhost:...`) in a browser.
-This is the default starter state — everyone should see the same thing.
+This is your starting point — CC will transform it into the design you just
+created.
 
-> "This is your starting point. Now we'll ask CC to transform it into
-> the design you just created."
-
-In VSCode CC sidebar (make sure you have `my-prototype` project opened in the VSCode window) type something like:
+In the CC sidebar (make sure you have `my-prototype` open in VSCode):
 
 ```
 Look at my Figma design at [file URL]. Apply this design to the
@@ -127,8 +69,8 @@ prototype in this project. The project is already set up — just modify
 the existing files to match the design.
 ```
 
-CC will update the existing files to match their Figma design.
-When it's ready, check the dev server in a browser to see the results.
+CC will update the files to match your design. When it's done, refresh the
+browser to see the result.
 
 **If something breaks:**
 
@@ -136,112 +78,124 @@ When it's ready, check the dev server in a browser to see the results.
 The prototype shows [describe what happened]. Fix it.
 ```
 
-> "Same loop as always — CC writes, you test, CC fixes."
+> **The loop:** CC writes, you test in the browser, CC fixes. Same pattern as
+> Session 1 — just with a real prototype this time.
 
 ---
 
-## 1:25–1:35 — Commit and Push (10 min)
+## 1:00–1:10 — Commit and push
 
-**Goal:** Reinforce the git workflow from Session 1.
+Same git workflow as Session 1. Your GitHub repo already exists (it was
+created from the template in pre-work), so you just need to commit and push.
 
-The GitHub repo already exists from the template step. In the CC sidebar:
+In the CC sidebar:
 
 ```
 Commit all the changes and push to GitHub.
 ```
 
-Have everyone check their repo on GitHub — they should see the new commits.
-
-> "The repo was already set up when you created it from the template.
-> Now you're just pushing your work."
+Open your repo on GitHub and confirm the new commits are there.
 
 ---
 
-## 1:35–1:55 — Collaborate on a Shared Project (20 min)
+## 1:10–1:30 — Collaborate on a shared project
 
-**Goal:** Everyone works on the same repo using branches.
+Now you'll work on a shared project alongside others — using branches so
+everyone's work stays separate until it's time to merge.
 
-Share the URL of the pre-created GitHub project. In Terminal, everyone clones it:
+> **Working alone?** This section assumes a group, but you can do it solo —
+> just create two or three branches yourself and treat each one like a
+> different "person" making changes. The merge steps work the same way.
+
+The facilitator will share the URL of the shared GitHub project.
+
+### Clone the shared project and run it
+
+In Terminal:
 
 ```bash
 cd ~/Code
 git clone [repo URL]
 cd [repo name]
-```
-
-Run the project and open in a browser:
-
-```bash
 pnpm install
 pnpm dev
 ```
 
-Check the browser — this is the shared project's current state.
+Open the URL in a browser — this is the shared project's current state.
 
-Open the folder in a **new VSCode window** (`File → New Window`, then `File → Open Folder`).
+Open the folder in a **new VSCode window** (`File → New Window`, then
+`File → Open Folder`) so it doesn't take over your prototype window.
 
 ### Create a branch
 
 In the CC sidebar:
 
 ```
-Create a new git branch called [their-name]-edits
+Create a new git branch called [your-name]-edits
 ```
 
-Under the hood, CC runs: `git checkout -b [their-name]-edits`
+Under the hood, CC runs: `git checkout -b [your-name]-edits`
 
-Explain:
-> "A branch is your own copy of the project. You can make changes without
-> affecting anyone else's work. When you're ready, you merge it back."
+> **What's a branch?** It's your own copy of the project where you can make
+> changes without affecting anyone else. When you're ready, your branch gets
+> merged back into the main branch.
 
-### Make edits
+### Make some edits
 
-In the CC sidebar, give each person a different small task. For example:
-- Person A: "Change the page title to [something]"
-- Person B: "Add a footer with [text]"
-- Person C: "Change the primary button color to [color]"
+In the CC sidebar, ask CC to make a small change. The facilitator will give
+each person a different task — for example:
 
-Let CC make the changes. Review in the browser.
+- "Change the page title to [something]"
+- "Add a footer with [text]"
+- "Change the primary button color to [color]"
 
-### Push
+Review the result in the browser.
 
-Everyone pushes their branch. In the CC sidebar:
+### Push your branch
+
+In the CC sidebar:
 
 ```
-Commit my changes with the message "[their-name]: [what they changed]"
+Commit my changes with the message "[your-name]: [what you changed]"
 and push to the remote.
 ```
 
 Under the hood, CC runs:
+
 ```bash
 git add .
-git commit -m "[their-name]: [what they changed]"
-git push -u origin [their-name]-edits
+git commit -m "[your-name]: [what you changed]"
+git push -u origin [your-name]-edits
 ```
 
-### View each other's branches
+### Look at someone else's work
 
-First, everyone fetches the remote branches. In the CC sidebar:
+First, fetch all remote branches. In the CC sidebar:
 
 ```
 Fetch all remote branches
 ```
 
-Now point out the **branch name in the bottom-left corner of VSCode**. Click it
-— a list of branches appears. Have everyone pick someone else's branch
-(e.g., `origin/[other-person]-edits`).
+Now look at the **branch name in the bottom-left corner of VSCode**. Click it
+— a list of branches appears. Pick someone else's branch (e.g.
+`origin/[other-person]-edits`).
 
-Check the browser — they should see the other person's changes instead of their own.
+Check the browser — you should see their changes instead of yours.
 
-> "This is how you look at a colleague's work without affecting yours.
-> Each branch is independent — click the bottom-left to switch between them."
+> **Tip:** Each branch is independent. The bottom-left branch picker is the
+> easiest way to jump between them — useful for reviewing a colleague's work
+> without touching your own.
 
-Have them click the branch name again and switch back to their own branch.
+When you're done looking, click the branch name again and switch back to your
+own branch.
 
-### Merge (facilitator does this on screen share)
+### Merge everything to main
 
-Once all three branches are pushed, you merge them one at a time while everyone
-watches. Narrate what's happening at each step.
+Once all branches are pushed, the facilitator will merge them one at a time
+on screen share so you can watch.
+
+> **Working alone or want to do it yourself?** Run the steps below in your
+> own Terminal. Same commands, just done by you instead of the facilitator.
 
 ```bash
 git checkout main
@@ -254,31 +208,34 @@ git merge person-c-edits
 git push
 ```
 
-If a merge conflict happens (likely on the 2nd or 3rd merge):
-> "This is what happens when two people edit the same thing.
-> Git doesn't know which version to keep — you have to decide."
+> **Merge conflicts** can happen if two branches changed the same lines. If
+> you hit one, ask CC to help resolve it — that's a great use of CC inside the
+> git workflow.
 
-Resolve it live with CC's help, or walk through the conflict markers manually.
+### Pull the combined result
 
-### Everyone pulls the result
-
-After all merges, everyone runs in the CC sidebar:
+Once all merges are done, everyone updates their copy. In the CC sidebar:
 
 ```
 Switch to main and pull the latest changes.
 ```
 
-Everyone should now see all three changes combined in their project.
+You should now see all the changes combined in your project — the payoff
+moment of the workshop.
 
 ---
 
-## 1:55–2:00 — Wrap-up (5 min)
+## 1:30–1:35 — Wrap-up
 
-> "Today you connected CC to Figma and Jira. You created a design from a PRD,
-> built a prototype from that design, and collaborated on code with your team.
-> That's the full workflow — requirements to design to code to collaboration."
+You connected CC to Figma and Jira, created a design from a PRD, built a
+prototype from that design, and collaborated on code with your team. That's
+the full workflow — requirements → design → code → collaboration.
 
-Leave them with:
-- Their GitHub repos (personal prototype + shared project)
-- The CC docs link for going deeper
-- Encouragement to try this loop on a real project
+You leave with:
+- Two GitHub repos: your personal prototype and the shared project
+- The CC docs (https://docs.claude.com/en/docs/claude-code) for going deeper
+- A real example you can rerun on your own project
+
+> **Try it on something real.** The fastest way to get comfortable with this
+> loop is to use it on a small project of your own — even a quick HTML page
+> or a script. The patterns are exactly the same.

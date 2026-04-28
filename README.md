@@ -21,10 +21,14 @@ Claude Code doing the heavy lifting.
 ## Files
 
 ```
-01-pre-work/checklist.md   → send to participants 3+ days before Session 1
-02-session-1/guide.md      → facilitator guide for Session 1
-04-session-2/guide.md      → facilitator guide for Session 2
+01-pre-work/checklist.md             → send to participants 3+ days before Session 1
+02-session-1/guide.md                → Session 1 walkthrough (participant-facing, with facilitator notes inline)
+03-pre-work-session-2/checklist.md   → send to participants 2–3 days before Session 2
+04-session-2/guide.md                → Session 2 walkthrough (participant-facing, with facilitator notes inline)
 ```
+
+The session guides are written tutorial-style for participants. Facilitator-only
+notes live in callout boxes inside each guide.
 
 ## Before Session 1
 
@@ -34,8 +38,9 @@ Claude Code doing the heavy lifting.
 
 ## Before Session 2
 
-- Have a Figma component library ready to share
-- Have a PRD in Jira ready to share
-- Create an empty Figma file for each participant (or one shared file with pages per person)
+- Send `03-pre-work-session-2/checklist.md` to all participants 2–3 days ahead
+- Verify everyone completed it (5-min check at session start)
+- Have the PRD Jira ticket and component library URLs ready to share
+- Have each participant duplicate the Figma project template
 - Create a shared GitHub project repo and add participants as collaborators
 - Test Figma MCP + Atlassian plugin on your own machine end-to-end
