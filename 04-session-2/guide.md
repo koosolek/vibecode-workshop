@@ -104,10 +104,14 @@ The prototype shows [describe what happened]. Fix it.
 > **The loop:** CC writes, you test in the browser, CC fixes. Same pattern as
 > Session 1 — just with a real prototype this time.
 
-> **Tip — port already in use?** If you stop and restart the dev server, you
-> might see an error like "port 3000 already in use". The previous server is
-> still running somewhere. In DevBar, click "stop" on the project. In Terminal,
-> press `Ctrl + C` in whichever window started it.
+> **Tip — port already in use?** If the dev server fails with "port 3000
+> already in use", something else is using that port. Almost always, it's a
+> previous dev server you forgot to stop — in DevBar click "stop" on the
+> project, or press `Ctrl + C` in the Terminal window that started it.
+>
+> If you can't find what's using the port (e.g. it's a background process
+> from another app like Docker), ask CC: "What's running on port 3000 and how
+> do I stop it?" — it can identify the process and walk you through.
 
 ---
 
@@ -176,9 +180,10 @@ Create a new git branch called [your-name]-edits
 
 Under the hood, CC runs: `git checkout -b [your-name]-edits`
 
-> **What's a branch?** It's your own copy of the project where you can make
-> changes without affecting anyone else. When you're ready, your branch gets
-> merged back into the main branch.
+> **What's a branch?** It's a parallel version of the project that lives in
+> the same folder. You can make changes on it without affecting the main
+> branch — and you can switch between branches in seconds. When you're ready,
+> your branch gets merged back into main.
 
 ### Make some edits
 
