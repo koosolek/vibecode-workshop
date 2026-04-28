@@ -8,6 +8,34 @@ prototype starter and confirm it runs locally.
 
 ---
 
+## For facilitators (or solo learners)
+
+Before participants arrive, the facilitator needs to have a few things ready.
+**If you're going through this workshop on your own, you'll need to prep these
+yourself.**
+
+- A **PRD ticket in Jira** that participants will turn into a design. It
+  should be self-contained, scoped, and clear about requirements. If you
+  don't already have one, Atlassian's product requirements template is a
+  good starting point:
+  https://www.atlassian.com/software/confluence/templates/product-requirements
+- A **Figma project template** for participants to design in, with relevant
+  design system libraries linked (we use the PDUX project template internally)
+- A **shared GitHub project repo** for the collaboration section, with all
+  participants added as collaborators. Easiest path: another fresh clone of
+  the prototype starter, possibly with one small change so there's something
+  to merge into
+- A few **small edit assignments** — one per participant — for the
+  collaboration section (e.g. "Person A: change the page title to X",
+  "Person B: change the button color", "Person C: add a footer")
+
+Participants need to be added to the `Perforce-Shared-Services` GitHub org
+in advance — pre-work step 5 fails without that access.
+
+Verify your own MCP connections work end-to-end before the session.
+
+---
+
 ## 1. Start CC in Terminal
 
 In Terminal (the Mac app):
@@ -61,14 +89,12 @@ In the same CC session, test that Figma works:
 Describe my Figma project template file at [your file URL]
 ```
 
-Then test that Atlassian works:
+Then test that Atlassian works — the facilitator will share a PRD ticket URL
+or key. Ask CC to summarize it:
 
 ```
-Summarize PUPCLD-3339
+Summarize [PRD ticket key, e.g. ABC-123]
 ```
-
-(That's https://perforce.atlassian.net/browse/PUPCLD-3339 — the PRD you'll use
-in Session 2.)
 
 If both come back with sensible answers, the connections work.
 

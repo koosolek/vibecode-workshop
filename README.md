@@ -1,8 +1,11 @@
 # VibeCode Workshop
 
-2-session Claude Code onboarding for a team of 3. Participants finish with a
-design-to-prototype workflow and real GitHub collaboration experience — with
-Claude Code doing the heavy lifting.
+2-session Claude Code onboarding aimed at non-engineers. Participants finish
+with a design-to-prototype workflow and real GitHub collaboration experience
+— with Claude Code doing the heavy lifting.
+
+Designed to be facilitated for a small group, but also runnable solo as a
+self-paced tutorial.
 
 ## What participants do
 
@@ -15,32 +18,19 @@ Claude Code doing the heavy lifting.
 
 | Session | Duration | Focus |
 |---------|----------|-------|
-| Session 1 | 2 hours | VSCode, GitHub auth, Claude Code fundamentals, Git basics |
+| Session 1 | 2 hours | VSCode, GitHub auth, Claude Code fundamentals, Git basics, first project |
 | Session 2 | 2 hours | Figma + Atlassian MCP, design from PRD, prototype, GitHub collaboration |
 
 ## Files
 
 ```
-01-pre-work/checklist.md             → send to participants 3+ days before Session 1
-02-session-1/guide.md                → Session 1 walkthrough (participant-facing, with facilitator notes inline)
-03-pre-work-session-2/checklist.md   → send to participants 2–3 days before Session 2
-04-session-2/guide.md                → Session 2 walkthrough (participant-facing, with facilitator notes inline)
+01-pre-work/checklist.md             → participant pre-work for Session 1 (also lists facilitator prep)
+02-session-1/guide.md                → Session 1 walkthrough
+03-pre-work-session-2/checklist.md   → participant pre-work for Session 2 (also lists facilitator prep)
+04-session-2/guide.md                → Session 2 walkthrough
 ```
 
-The session guides are written tutorial-style for participants. Facilitator-only
-notes live in callout boxes inside each guide.
-
-## Before Session 1
-
-- Send `01-pre-work/checklist.md` to all participants
-- Verify everyone has completed it (5-min check at session start)
-- Have a GitHub org or personal account ready to demo pushing to
-
-## Before Session 2
-
-- Send `03-pre-work-session-2/checklist.md` to all participants 2–3 days ahead
-- Verify everyone completed it (5-min check at session start)
-- Have the PRD Jira ticket and component library URLs ready to share
-- Have each participant duplicate the Figma project template
-- Create a shared GitHub project repo and add participants as collaborators
-- Test Figma MCP + Atlassian plugin on your own machine end-to-end
+The session guides are written tutorial-style for participants. Facilitator
+prep lives at the top of each pre-work file — send each pre-work to
+participants a few days before the corresponding session and prep your own
+side from the same checklist.

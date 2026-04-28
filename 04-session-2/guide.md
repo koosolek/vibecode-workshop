@@ -6,11 +6,9 @@ done (MCP integrations set up, prototype starter cloned)
 In this session you'll create a design from a real PRD, build a prototype
 based on that design, and collaborate with others on a shared GitHub project.
 
-> **For facilitators:**
-> - Confirm everyone completed `03-pre-work-session-2/checklist.md` before the session
-> - Have the PRD Jira ticket URL ready to share
-> - Have the shared GitHub project repo created and participants added as collaborators
-> - Verify your own MCP connections work end-to-end before the session
+> **For facilitators:** See the facilitator section in
+> `03-pre-work-session-2/checklist.md` for everything you need to prep ahead
+> of this session.
 
 ---
 
@@ -19,18 +17,20 @@ based on that design, and collaborate with others on a shared GitHub project.
 Now you'll have CC create a Figma design based on a real PRD, using design
 system components.
 
-Open your copy of the Figma project template:
-https://www.figma.com/design/zVeRVzeF5J0sOq7ZjhdKQN/-PDUX-------Project-template
+Open your copy of the Figma project template (the facilitator will share the
+URL — for solo runs, use any Figma file with design system libraries linked
+in).
 
-The PRD: https://perforce.atlassian.net/browse/PUPCLD-3339
+The facilitator will share a **PRD ticket** in Jira — the requirements
+participants will translate into a design.
 
 In VSCode: `File → Open Folder` → `~/Code/my-prototype` (the project you
 cloned in pre-work). Open the CC sidebar:
 
 ```
-Read the PRD at PUPCLD-3339. 
+Read the PRD at [PRD ticket key]. 
 Then search the design system libraries [library URL] & [library URL] for relevant components.
-Create a design for the Finance Dashboard feature in my Figma file at [frame URL], using design system
+Create a design for the [feature name] in my Figma file at [frame URL], using design system
 components where possible.
 ```
 

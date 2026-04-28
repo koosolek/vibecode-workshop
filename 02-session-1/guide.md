@@ -5,9 +5,8 @@ This session takes you from a fresh setup to your first real project, committed
 to GitHub — with Claude Code (CC) doing most of the work. You'll learn the
 basic interaction model and the few concepts you need to know to use CC well.
 
-> **For facilitators:** Confirm everyone completed `01-pre-work/checklist.md`
-> before the session. Have a GitHub repo ready as a demo, and VSCode open with
-> screen share ready.
+> **For facilitators:** See the facilitator section in
+> `01-pre-work/checklist.md` for what to have ready ahead of this session.
 
 ---
 

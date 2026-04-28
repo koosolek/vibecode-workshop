@@ -5,6 +5,20 @@ If anything doesn't work, message [facilitator] — don't leave it for the day.
 
 ---
 
+## For facilitators (or solo learners)
+
+Before running Session 1:
+
+- A GitHub account or org where participants will push their first project
+  (their personal accounts are fine — we cover this in pre-work)
+- VSCode open and screen-sharing ready
+- Confirm participants completed steps 1–13 below
+
+If you're going through this workshop on your own, no extra prep beyond the
+steps below — your own setup is everything you need.
+
+---
+
 ## 1. Install VSCode
 
 Download and install from: https://code.visualstudio.com
