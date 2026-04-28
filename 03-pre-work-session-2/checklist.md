@@ -20,7 +20,7 @@ yourself.**
   good starting point:
   https://www.atlassian.com/software/confluence/templates/product-requirements
 - A **Figma project template** for participants to design in, with relevant
-  design system libraries linked (we use the PDUX project template internally)
+  design system libraries linked
 - A **shared GitHub project repo** for the collaboration section, with all
   participants added as collaborators. Easiest path: another fresh clone of
   the prototype starter, possibly with one small change so there's something
