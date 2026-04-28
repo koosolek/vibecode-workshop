@@ -67,7 +67,17 @@ CC will run the right command (you can see it does `pnpm dev`) and give you
 a localhost URL. Open it in a browser — this is your starting point.
 
 > **Tip — running the dev server yourself.** Anything CC does, you can do
-> manually. To start the server in Terminal: `cd ~/Code/my-prototype && pnpm dev`.
+> manually. The Terminal version is two commands:
+>
+> ```bash
+> cd ~/Code/my-prototype
+> pnpm dev
+> ```
+>
+> The first moves into the project folder, the second starts the dev server.
+> You can also chain them with `&&` to run both at once:
+> `cd ~/Code/my-prototype && pnpm dev`.
+>
 > If you're juggling multiple projects, **DevBar** (from pre-work) is the
 > easiest way — click the DevBar icon in the menu bar, find your project,
 > hit start.

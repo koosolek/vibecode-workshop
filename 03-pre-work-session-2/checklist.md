@@ -90,6 +90,11 @@ cd my-prototype
 pnpm install
 ```
 
+> **Heads up — make sure you have access to the `Perforce-Shared-Services`
+> GitHub org.** If the `gh repo create` command fails with a permissions or
+> "not found" error, message [facilitator] — you may need to be added to the
+> org first.
+
 > If `pnpm` isn't installed, install it first: `sudo npm install -g pnpm`
 
 ---
@@ -121,28 +126,12 @@ local dev servers without juggling Terminal windows. Strongly recommended
 for Session 2 — without it, you'll be hunting for Terminal windows, killing
 servers manually, and dealing with port conflicts.
 
-> **Requires macOS 14+.** Check your version: Apple menu → About This Mac.
+Follow the install instructions and prerequisites in the project's README:
+https://github.com/koosolek/devbar
 
-### Install pm2 (DevBar uses it)
-
-In Terminal:
-
-```
-sudo npm install -g pm2
-```
-
-### Download and install DevBar
-
-1. Go to https://github.com/koosolek/devbar/releases
-2. Download the latest `.zip` file
-3. Unzip it (double-click) and drag `DevBar.app` into your `/Applications`
-   folder
-4. The first time you open it, macOS warns it's "from an unidentified
-   developer" — right-click the app → **Open** → confirm. (You only do this
-   once.)
-
-DevBar appears in your menu bar (top-right of the screen). Click it to see
-your projects, start/stop their dev servers, and open them in VSCode.
+Once installed, DevBar lives in your menu bar (top-right of the screen).
+Click it to see your projects, start/stop their dev servers, and open them
+in VSCode.
 
 ---
 

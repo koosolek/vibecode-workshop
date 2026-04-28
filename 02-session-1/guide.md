@@ -66,6 +66,11 @@ being your home folder. Same result as the Finder version.
 > | `cd foo` | Double-click the `foo` folder to open it |
 > | `cd ..` | Click the back arrow in Finder |
 > | `ls` | Look at the folder contents |
+>
+> **Jumping to any folder by its full path:** you can `cd` to any folder by
+> giving its full path, e.g. `cd /Users/yourname/Documents/some/folder`.
+> Shortcut: type `cd ` (with a trailing space), then drag the folder from
+> Finder onto the Terminal window — Terminal pastes the full path for you.
 
 Now move into the folder you just made:
 
@@ -134,10 +139,11 @@ Terminal — try the slash commands as we go.
 ### 1. Conversations (chat sessions)
 
 - Each time you run `claude`, you're in a **session** (a single conversation).
-- To resume an earlier conversation: `claude --continue` (last one) or
+- To start CC and resume a previous conversation, use these flags in Terminal
+  (when CC isn't running yet): `claude --continue` (last conversation) or
   `claude --resume` (pick from a list).
-- You can also do this from inside CC: type `/resume` or `/continue` once it's
-  running — same effect.
+- If CC is already running, the same thing works as slash commands: type
+  `/resume` or `/continue` inside CC.
 - Sessions are stored in `~/.claude/projects/`.
 
 > **Tip — chats are tied to the folder path.** CC links conversations to the
@@ -175,9 +181,10 @@ when you want to share code, back it up online, or collaborate. But it's
 optional — if you're working alone on a quick prototype, you can use git
 locally and never push to GitHub. The project still has full history.
 
-> **Branches and merging.** Git lets you make a copy of your project — called
-> a **branch** — to try changes without affecting the main version. When you're
-> happy with the changes, you **merge** the branch back. We'll use this in
+> **Branches and merging.** Git lets you have multiple parallel versions of
+> your project inside the same folder — called **branches**. You can switch
+> between them, try changes on one without affecting the others, and **merge**
+> the changes back into the main branch when you're happy. We'll use this in
 > Session 2 when we collaborate. For now, just know branches exist.
 
 Bottom line: git is the durable record, GitHub is the optional sharing layer.
@@ -200,15 +207,15 @@ instructions:
 CC merges them — root-level rules apply everywhere, project-level rules stack
 on top.
 
-**Try it now.** In Finder, create a new file called `CLAUDE.md` inside
-`~/Code` with this single line:
+**Try it now.** In CC (still running in `~/Code`), ask it to create the file
+for you:
 
 ```
-Always write commit messages in lowercase.
+Create a CLAUDE.md in this folder with one rule: always write commit messages
+in lowercase.
 ```
 
-Save it. Back in CC, type `/clear` to start a fresh chat in this folder, then
-ask:
+CC will create the file. Then type `/clear` to start a fresh chat, and ask:
 
 ```
 What are your instructions for this project?
@@ -270,6 +277,8 @@ is the same Claude Code you used in Terminal, just with a graphical UI.
 > switching the CC extension to its terminal-style mode: VSCode Settings →
 > Extensions → Claude Code → check **Use Terminal**.
 
+OK, CC is open inside VSCode. Time to actually build something.
+
 ### Build a tiny web page
 
 In the CC chat panel, type:
@@ -291,8 +300,9 @@ When CC asks for permission to run `gh repo create` — approve it.
 Watch the **Explorer** on the left — files appear as CC creates them. Click
 `index.html` to open and read what CC wrote.
 
-> **Open it in a browser too:** double-click `index.html` in Finder to see
-> your page render.
+> **Open it in a browser too:** in Finder, right-click `index.html` →
+> **Open With** → pick a browser. (Double-clicking it doesn't always open in
+> a browser — it depends on what app is set as the default for `.html` files.)
 
 ### Check it on GitHub
 
@@ -337,7 +347,7 @@ CC will edit the file, commit, and push.
 
 ### Walk through the source control panel
 
-Click the **Source Control icon** again. Notice the **history view** — every
+Click the **Source Control icon** again. Look for the **Graph** section — every
 commit is listed with its message. Click a commit to see what changed in it,
 side-by-side. This is incredibly useful when you want to revisit what you did
 yesterday.
