@@ -16,95 +16,98 @@ basic interaction model and the few concepts you need to know to use CC well.
 In Terminal (the Mac app), run:
 
 ```bash
-claude --version
+claude
 ```
 
-You should see a version number.
+CC should start without asking you to log in (you logged in during pre-work).
+You'll see a prompt where you can type. Don't type anything yet — just
+confirm CC opened. Press `Ctrl + C` or type `/exit` to close it.
 
 > **If something's wrong:**
-> - `npm not found` → Node.js isn't installed (revisit pre-work step 4)
-> - `claude not found` → the npm install didn't complete, or you need a new
->   Terminal window
-> - `gh auth status` shows you're not logged in → run `gh auth login`
+> - CC asks you to log in → revisit pre-work step 7
+> - `claude: command not found` → revisit pre-work step 6 (the npm install)
+>   or open a fresh Terminal window
+> - `npm: command not found` → revisit pre-work step 5 (Node.js install)
+> - `gh auth status` shows you're not logged in → revisit pre-work step 12
 
 ---
 
-## 0:10–0:35 — VSCode tour
+## 0:10–0:25 — Create your Code folder
 
-The goal here is to get comfortable with VSCode before using it for real work.
+You'll keep all your coding projects in one place: a folder called `Code` in
+your home folder.
 
-1. **Open a folder.** `File → Open Folder` → pick your Desktop for now. The
-   left sidebar shows your files.
+There are two ways to do this. **Both work** — you can use either throughout
+the workshop. Try them both now to see they do the same thing.
 
-2. **The panels:**
-   - **Left sidebar icons:** Explorer (files), Search, Source Control (git),
-     Extensions
-   - **Right panel:** comes to life with extensions
+### The Finder way
 
-3. **Command Palette — the most important thing in VSCode.** Press
-   `Cmd + Shift + P` and type anything. Try it now: type "theme" → "Color
-   Theme" → pick one you like.
+Open Finder, navigate to your **home folder** (sidebar, or `Cmd + Shift + H`),
+right-click → **New Folder** → name it `Code`. Done.
 
-4. **Split view.** Drag a file tab to the right half of the editor. Useful
-   when reading CC output while editing code.
+### The Terminal way
 
-5. **The Claude Code sidebar.** Click the Claude icon in the left sidebar —
-   this is where you'll talk to CC. Don't start a chat yet, just see it's there.
-
-> **Tip — the two-app setup:** From now on, you'll always have two apps open
-> side by side: **VSCode** for chatting with CC and viewing files, and
-> **Terminal** for running commands. VSCode is where you talk, Terminal is
-> where you do.
-
-Take a couple of minutes to click around and explore.
-
----
-
-## 0:35–0:50 — Create ~/Code and connect GitHub
-
-You'll keep all your coding projects in one folder: `~/Code`. In Terminal:
+In Terminal:
 
 ```bash
 mkdir ~/Code
+```
+
+That command means "make a directory (folder), at the path `~/Code`" — `~`
+being your home folder. Same result as the Finder version.
+
+> **Tip:** You'll move between Finder and Terminal a lot. They're showing the
+> same folders, just different views. A few common Terminal commands and
+> their Finder equivalents:
+>
+> | Terminal | Finder equivalent |
+> |--|--|
+> | `mkdir foo` | New Folder → name it `foo` |
+> | `cd foo` | Double-click the `foo` folder to open it |
+> | `cd ..` | Click the back arrow in Finder |
+> | `ls` | Look at the folder contents |
+
+Now move into the folder you just made:
+
+```bash
 cd ~/Code
 ```
 
-Now check that GitHub CLI is authenticated:
+Your Terminal prompt should change to show `Code` instead of `~`.
+
+### Confirm GitHub is connected
+
+You set this up in pre-work, but let's double-check. In Terminal:
 
 ```bash
 gh auth status
 ```
 
-You should see your username. If not, run:
-
-```bash
-gh auth login
-```
-
-Pick `GitHub.com` → `HTTPS` → `Y` → follow the browser prompts.
-
-Finally, set your git identity (if you didn't already in pre-work):
-
-```bash
-git config --global user.name "Your Name"
-git config --global user.email "your@email.com"
-```
+You should see your GitHub username. If not, run `gh auth login` and follow
+the prompts.
 
 ---
 
-## 0:50–1:15 — Your first Claude Code chat
+## 0:25–0:50 — Your first Claude Code chat
 
-In VSCode: `File → Open Folder` → pick `~/Code`. Then click the Claude icon in
-the left sidebar to open CC.
+You'll talk to CC in Terminal first. Later, when you start working on a real
+project, we'll move to the VSCode side. CC works the same way in both — it's
+the same tool, just a different interface.
 
-Type this question (don't paste — typing makes it stick better):
+In Terminal (still in `~/Code`):
+
+```bash
+claude
+```
+
+CC starts. Type this question (don't paste — typing makes it stick better):
 
 ```
-What is Claude Code and how is it different from using Claude in a browser?
+What is Claude Code and how is it different from the Claude desktop app?
 ```
 
-Read the answer. The key points:
-- CC is right here in your editor, inside your project
+Press Enter. Read the answer. The key points:
+- CC is right here in your terminal, in the folder you opened it from
 - It can read and write files on your machine
 - It's not just chat — it's an agent that can take actions
 
@@ -115,23 +118,26 @@ What does "context window" mean and why does it matter?
 ```
 
 > **Tip:** Think of CC's context window as its working memory for the
-> conversation. It can only hold so much at once. That's why we'll use
-> `CLAUDE.md` files (covered next) — to keep important instructions available
-> without eating up that context.
+> current conversation. It can only hold so much at once. That's why we'll
+> use `CLAUDE.md` files (covered next) — to keep important instructions
+> available without eating up that context.
+
+Leave CC running — you'll keep using it in the next section.
 
 ---
 
-## 1:15–1:40 — Concepts you need to know
+## 0:50–1:15 — Concepts you need to know
 
-A few core concepts will explain almost everything CC does. Skim this section
-now — you'll come back to it.
+A few core concepts explain almost everything CC does. You're still in CC in
+Terminal — try the slash commands as we go.
 
 ### 1. Conversations (chat sessions)
 
-- Each chat in the CC sidebar is a **session**.
-- You can start new sessions or pick up old ones from the sidebar.
-- In Terminal, you can also resume sessions: `claude --continue` (last session)
-  or `claude --resume` (pick from a list).
+- Each time you run `claude`, you're in a **session** (a single conversation).
+- To resume an earlier conversation: `claude --continue` (last one) or
+  `claude --resume` (pick from a list).
+- You can also do this from inside CC: type `/resume` or `/continue` once it's
+  running — same effect.
 - Sessions are stored in `~/.claude/projects/`.
 
 > **Tip — chats are tied to the folder path.** CC links conversations to the
@@ -139,29 +145,47 @@ now — you'll come back to it.
 > CC won't find the old chats — it'll start fresh. Your code and git history
 > are fine (see below), but the chat history stays linked to the original path.
 
-> **Tip — chats are shared across all CC interfaces.** A chat started in the
-> VSCode sidebar shows up in Terminal (`claude --resume`) and in the Claude
-> desktop app. Pick whichever interface feels right in the moment.
+> **Tip — chats are shared across CC interfaces.** A chat started in Terminal
+> CC shows up in the VSCode extension's chat panel and in the Claude desktop
+> app (when you're in the same folder). Pick whichever interface feels right.
 
-### 2. Git vs GitHub — your project's real memory
+### 2. Slash commands
+
+Type `/` in CC right now to see the available commands. Useful ones:
+
+- `/help` — see what's available
+- `/resume`, `/continue` — same as the CLI flags above
+- `/clear` — start a fresh conversation
+- `/compact` — compress the current conversation when it gets long
+- `/mcp` — manage MCP connections (you'll use this in Session 2)
+- `/plugin` — install or manage plugins (also Session 2)
+- `/exit` — quit CC
+
+You don't have to memorize these. Just know the `/` menu exists.
+
+### 3. Git vs GitHub — your project's real memory
 
 **Git** is a tool that runs on your Mac. It tracks every change you make to
-your project — like an unlimited undo history. All of that history lives inside
+your project — like an unlimited undo history. All that history lives inside
 your project folder (in a hidden `.git` folder). It doesn't need the internet.
 Move the folder, rename it, put it on a USB stick — `git log` still works.
 
-**GitHub** is a website where you can upload a copy of your git project. It's
-useful when you want to share code, back it up online, or collaborate. But
-it's optional — if you're working alone on a quick prototype, you can just
-use git locally and never push to GitHub. The project still has full history.
+**GitHub** is a website where you can upload a copy of your git project. Useful
+when you want to share code, back it up online, or collaborate. But it's
+optional — if you're working alone on a quick prototype, you can use git
+locally and never push to GitHub. The project still has full history.
 
-We'll use both in this workshop to practice the full workflow, but remember:
-git is the durable record, GitHub is the optional sharing layer.
+> **Branches and merging.** Git lets you make a copy of your project — called
+> a **branch** — to try changes without affecting the main version. When you're
+> happy with the changes, you **merge** the branch back. We'll use this in
+> Session 2 when we collaborate. For now, just know branches exist.
 
-### 3. CLAUDE.md — Project memory
+Bottom line: git is the durable record, GitHub is the optional sharing layer.
 
-A markdown file that CC reads automatically at the start of every session. Use
-it for: project conventions, tech stack, things CC should always know.
+### 4. CLAUDE.md — Project memory
+
+A markdown file that CC reads automatically at the start of every session.
+Use it for: project conventions, tech stack, things CC should always know.
 
 **CLAUDE.md works at multiple levels.** CC reads every `CLAUDE.md` it finds
 from your home folder down to the project folder. This lets you layer
@@ -176,84 +200,160 @@ instructions:
 CC merges them — root-level rules apply everywhere, project-level rules stack
 on top.
 
-**Try it:** in VSCode, create a new file called `CLAUDE.md` in `~/Code` with
-this single line:
+**Try it now.** In Finder, create a new file called `CLAUDE.md` inside
+`~/Code` with this single line:
 
 ```
 Always write commit messages in lowercase.
 ```
 
-Save it. Then in the CC sidebar, start a new chat and ask:
+Save it. Back in CC, type `/clear` to start a fresh chat in this folder, then
+ask:
 
 ```
 What are your instructions for this project?
 ```
 
-CC should mention the lowercase rule — even though the file is one level up.
-
-### 4. Context files (@ mentions)
-
-- Pull any file into context with `@filename` — e.g. `@README.md summarize this project`.
-- Useful for sharing a design spec or pointing CC at a specific file to edit.
-- In VSCode, CC also sees files you have open in the editor — so just opening
-  a file is often enough, no `@` needed.
-
-### 5. Slash commands
-
-Type `/` in CC to see all available commands. Key ones to know:
-
-- `/help` — see what's available
-- `/mcp` — manage MCP connections (you'll use this in Session 2 for Figma)
-- `/compact` — compress the conversation when context gets long
-- `/clear` — start a fresh conversation
-
-You don't have to memorize these — just know the `/` menu exists.
+CC should mention the lowercase rule.
 
 ### The big picture
 
 | Type | What it is | When to use |
 |------|-----------|-------------|
 | Session chat | The current conversation | Everything — it's the main loop |
+| Slash commands | Built-in shortcuts | Quick actions without leaving the chat |
 | Git | Permanent project history | Every meaningful change — your durable record |
 | CLAUDE.md | Persistent project instructions | Rules and conventions that never change |
-| @ files | Pull a specific file into context | When CC needs to see or edit something |
-| / commands | Built-in shortcuts | Quick actions without leaving the chat |
 
 ---
 
-## 1:40–2:00 — Your first project, committed and pushed
+## 1:15–2:00 — Your first project, committed and pushed
 
-Time to put it all together. You'll create a real project, commit it with git,
-and push it to GitHub — and CC will do most of the work.
+Time to put it all together. You'll switch to VSCode, build a tiny web page
+with CC, commit it, push it to GitHub, edit it, and commit again — getting
+comfortable with the whole loop.
 
-In Terminal, create the project folder:
+First, exit Terminal CC for now (`/exit`) — you're moving to VSCode.
 
-```bash
-cd ~/Code
-mkdir my-first-project
+### Create the project folder
+
+Use whichever you prefer:
+
+- **Finder:** open `~/Code`, right-click → New Folder → name it `my-first-project`.
+- **Terminal:** `mkdir ~/Code/my-first-project`
+
+### Open it in VSCode
+
+In VSCode: `File → Open Folder` → pick `~/Code/my-first-project`.
+
+This is your first time really using VSCode in the workshop, so a quick tour
+of what you're looking at:
+
+- **Left sidebar icons:** Explorer (files), Search, Source Control (git),
+  Extensions, and the Claude icon (the CC extension you installed in pre-work).
+- **Command Palette:** press `Cmd + Shift + P` and type anything. Try it now:
+  type "theme" → "Color Theme" → pick one you like.
+- **Editor area:** where files open when you click them in the Explorer.
+
+### Open CC inside VSCode
+
+Click the **Claude icon** in the left sidebar. The CC chat panel opens — this
+is the same Claude Code you used in Terminal, just with a graphical UI.
+
+> **Tip — chat panel vs Terminal CC.** Both share the same chat history; pick
+> whichever feels right. The chat panel has nicer diffs and a click-to-approve
+> permission UI. Terminal CC starts faster, is better for quick questions or
+> small tasks, and supports every slash command (the chat panel is missing a
+> few — `/resume`, `/continue`, `/clear`, `/exit`).
+>
+> If you'll use both interfaces a lot, you can keep things consistent by
+> switching the CC extension to its terminal-style mode: VSCode Settings →
+> Extensions → Claude Code → check **Use Terminal**.
+
+### Build a tiny web page
+
+In the CC chat panel, type:
+
+```
+Create a simple index.html that says "Hello, [your name]!" with a heading
+and a paragraph. Initialize git, commit the file, and create a GitHub repo
+for the project.
 ```
 
-In VSCode: `File → Open Folder` → navigate to `~/Code/my-first-project`. Open
-the CC sidebar and type:
+CC will:
+1. Write the `index.html` file
+2. Run `git init`
+3. Make a first commit
+4. Run `gh repo create` to make a GitHub repo and push to it
+
+When CC asks for permission to run `gh repo create` — approve it.
+
+Watch the **Explorer** on the left — files appear as CC creates them. Click
+`index.html` to open and read what CC wrote.
+
+> **Open it in a browser too:** double-click `index.html` in Finder to see
+> your page render.
+
+### Check it on GitHub
+
+Open https://github.com in a browser, find the new repo on your profile.
+You should see your `index.html` and the commit message CC wrote.
+
+> **Reminder — GitHub is optional.** Pushing to GitHub is what made your
+> project visible online. For solo prototyping you don't need it — git alone
+> on your Mac is enough. We're using GitHub here so you can practice the full
+> workflow.
+
+### Commit messages
+
+CC writes commit messages for you, which is great. But it's worth knowing
+how to write one yourself:
+
+- VSCode's **Source Control panel** (the third icon in the left sidebar) shows
+  changed files and a text box where you can type a commit message
+- A good message is one short line that says **what changed and why**, e.g.
+  `add hello world page` or `fix typo in heading`
+- Past commit messages in the same panel show what's already been done
+
+Click the Source Control icon now — you should see "0 changes" since you
+just committed. We'll come back to it after we make an edit.
+
+### Make a change and commit again
+
+Pick something small. In the CC chat panel:
 
 ```
-Help me set up this folder as a new project. Initialize git, create a README.md
-and a CLAUDE.md, make a first commit, and create a GitHub repo for it.
+Change the heading to "Welcome to my page" and add a current date below it.
+Commit and push the change.
 ```
 
-CC will guide you through it. When it asks to run `gh repo create` — approve it.
+CC will edit the file, commit, and push.
 
-> **What's happening here:**
-> - CC writes the README and CLAUDE.md without you typing a single line of content
-> - It runs `git init` for you — you could have typed that yourself, but you
->   don't have to
-> - It writes a commit message for you
-> - The files appear in the VSCode file explorer on the left as CC creates them
+> **Try @ mentions.** If you want to point CC at a specific file, type
+> `@index.html` in your message — that pulls the file into the conversation.
+> When you're working in VSCode, just opening or selecting text in a file is
+> often enough — CC sees what you have open. The `@` syntax is a more explicit
+> way to do the same thing, and it's how you'd do it in Terminal CC too.
 
-When it's done, open your GitHub profile in a browser. Your new repo should
-be there.
+### Walk through the source control panel
 
-> **This is the loop:** you describe what you want, CC does it, you review and
-> approve. In Session 2 you'll connect CC to Figma and Jira, create a design,
-> and build a prototype — same loop, bigger project.
+Click the **Source Control icon** again. Notice the **history view** — every
+commit is listed with its message. Click a commit to see what changed in it,
+side-by-side. This is incredibly useful when you want to revisit what you did
+yesterday.
+
+Refresh your repo on GitHub. Both commits should be there.
+
+### Wrap-up
+
+You just:
+- Created a project from scratch
+- Built a page using CC
+- Committed and pushed it
+- Edited it and committed again
+- Saw your work both in VSCode's source control view and on GitHub
+
+This is the loop. You describe what you want, CC does it, you review and
+approve. In Session 2 you'll connect CC to Figma and Jira, create a design,
+and build a prototype — same loop, bigger project.
 

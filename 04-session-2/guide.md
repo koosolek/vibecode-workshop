@@ -44,24 +44,37 @@ When CC finishes, review the design in Figma.
 > connects them. You review and refine — CC does the assembly. Expect to
 > iterate: tell CC what to fix or add, and let it adjust.
 
+> **Tip — Figma generation is slow.** Creating Figma content via MCP is
+> noticeably slower than CC writing code. A first pass can take several
+> minutes. Be patient and let CC finish before sending follow-up prompts —
+> interrupting mid-generation usually makes things worse.
+
 ---
 
 ## 0:30–1:00 — Build a prototype from your design
 
 Now you'll turn the Figma design into a working web prototype.
 
-First, see what the starter looks like by default. In a new Terminal window:
+### Start the dev server
 
-```bash
-cd ~/Code/my-prototype
-pnpm dev
+First, see what the starter looks like by default. In the CC sidebar:
+
+```
+Start the dev server for this project.
 ```
 
-Open the URL shown in Terminal (usually `http://localhost:...`) in a browser.
-This is your starting point — CC will transform it into the design you just
-created.
+CC will run the right command (you can see it does `pnpm dev`) and give you
+a localhost URL. Open it in a browser — this is your starting point.
 
-In the CC sidebar (make sure you have `my-prototype` open in VSCode):
+> **Tip — running the dev server yourself.** Anything CC does, you can do
+> manually. To start the server in Terminal: `cd ~/Code/my-prototype && pnpm dev`.
+> If you're juggling multiple projects, **DevBar** (from pre-work) is the
+> easiest way — click the DevBar icon in the menu bar, find your project,
+> hit start.
+
+### Apply the design to the prototype
+
+In the CC sidebar:
 
 ```
 Look at my Figma design at [file URL]. Apply this design to the
@@ -80,6 +93,11 @@ The prototype shows [describe what happened]. Fix it.
 
 > **The loop:** CC writes, you test in the browser, CC fixes. Same pattern as
 > Session 1 — just with a real prototype this time.
+
+> **Tip — port already in use?** If you stop and restart the dev server, you
+> might see an error like "port 3000 already in use". The previous server is
+> still running somewhere. In DevBar, click "stop" on the project. In Terminal,
+> press `Ctrl + C` in whichever window started it.
 
 ---
 
@@ -103,27 +121,39 @@ Open your repo on GitHub and confirm the new commits are there.
 Now you'll work on a shared project alongside others — using branches so
 everyone's work stays separate until it's time to merge.
 
-> **Working alone?** This section assumes a group, but you can do it solo —
-> just create two or three branches yourself and treat each one like a
-> different "person" making changes. The merge steps work the same way.
+> **Working alone?** This section assumes a group, but you can practice the
+> branch/merge flow on your own. Use the `my-prototype` project you set up
+> in pre-work — create two or three branches there with different small
+> changes, then merge them in. The steps below work the same way.
 
 The facilitator will share the URL of the shared GitHub project.
 
-### Clone the shared project and run it
+### Clone the shared project
 
-In Terminal:
+In the CC sidebar:
 
-```bash
-cd ~/Code
-git clone [repo URL]
-cd [repo name]
-pnpm install
-pnpm dev
+```
+Clone [repo URL] into my ~/Code folder, install dependencies, and start the
+dev server.
 ```
 
-Open the URL in a browser — this is the shared project's current state.
+CC will clone, run `pnpm install`, and start the server. Open the localhost
+URL — this is the shared project's current state.
 
-Open the folder in a **new VSCode window** (`File → New Window`, then
+> **Tip — under the hood:**
+>
+> ```bash
+> cd ~/Code
+> git clone [repo URL]
+> cd [repo name]
+> pnpm install
+> pnpm dev
+> ```
+>
+> If you'd rather use DevBar to manage the dev server, you can ask CC to clone
+> and install only, then start the server from DevBar.
+
+Open the cloned folder in a **new VSCode window** (`File → New Window`, then
 `File → Open Folder`) so it doesn't take over your prototype window.
 
 ### Create a branch

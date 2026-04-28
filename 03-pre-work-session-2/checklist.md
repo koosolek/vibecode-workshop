@@ -18,6 +18,11 @@ claude
 
 Keep this CC session open — you'll do all the MCP setup inside it.
 
+> **Tip — slash commands like `/plugin` and `/mcp` only work *inside* CC.**
+> Once `claude` is running, your prompt has changed and you're talking to CC.
+> That's where slash commands work. If you `/exit` CC, you're back in Terminal
+> — typing `/plugin` there won't do anything.
+
 ---
 
 ## 2. Install the Figma MCP
@@ -34,6 +39,17 @@ https://developers.figma.com/docs/figma-mcp-server/remote-server-installation/
 
 In CC, type `/plugin`, go to the **Discover** tab, and search for "atlassian".
 Follow the prompts to install it.
+
+> **Alternative — Atlassian Rovo connector.** If you prefer not to use the
+> Claude Code plugin, you can connect Atlassian via Rovo instead. In the
+> Claude desktop app: Settings → **Connectors** → Atlassian. Rovo also works
+> with Claude Code (Terminal + VSCode), so you don't have to choose just one.
+>
+> When to pick which:
+> - **CC plugin** (recommended for this workshop): more Atlassian capabilities
+>   — search, create, comment, transition Jira issues, full Confluence editing
+> - **Rovo connector**: simpler setup via Atlassian; mostly read/search; works
+>   the same in Claude desktop app and even ChatGPT
 
 ---
 
@@ -69,7 +85,7 @@ In Terminal:
 
 ```bash
 cd ~/Code
-gh repo create my-prototype --template koosolek/pd-perforce-prototype-starter --clone --public
+gh repo create my-prototype --template Perforce-Shared-Services/pd-perforce-prototype-starter --clone --public
 cd my-prototype
 pnpm install
 ```
@@ -91,11 +107,49 @@ You should see the default starter page.
 
 When you've seen it work, stop the server with `Ctrl + C`.
 
+> **Tip — every project's README is the source of truth.** When you open a
+> new project, the `README.md` file usually tells you exactly what commands
+> to run to install and start it. The two commands above (`pnpm install` and
+> `pnpm dev`) come from this project's README.
+
+---
+
+## 7. (Recommended) Install DevBar for managing dev servers
+
+DevBar is a free Mac menu bar app that helps you start, stop, and monitor
+local dev servers without juggling Terminal windows. Strongly recommended
+for Session 2 — without it, you'll be hunting for Terminal windows, killing
+servers manually, and dealing with port conflicts.
+
+> **Requires macOS 14+.** Check your version: Apple menu → About This Mac.
+
+### Install pm2 (DevBar uses it)
+
+In Terminal:
+
+```
+sudo npm install -g pm2
+```
+
+### Download and install DevBar
+
+1. Go to https://github.com/koosolek/devbar/releases
+2. Download the latest `.zip` file
+3. Unzip it (double-click) and drag `DevBar.app` into your `/Applications`
+   folder
+4. The first time you open it, macOS warns it's "from an unidentified
+   developer" — right-click the app → **Open** → confirm. (You only do this
+   once.)
+
+DevBar appears in your menu bar (top-right of the screen). Click it to see
+your projects, start/stop their dev servers, and open them in VSCode.
+
 ---
 
 ## You're ready for Session 2
 
-If all four checks worked — Figma MCP, Atlassian plugin, the GitHub repo, and
-the running prototype — you're set. See you at the workshop.
+If everything worked — Figma MCP, Atlassian plugin, the GitHub repo, the
+running prototype, and (optionally) DevBar — you're set. See you at the
+workshop.
 
 If anything failed, message [facilitator] before the session.

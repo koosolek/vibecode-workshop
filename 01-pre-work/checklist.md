@@ -23,33 +23,73 @@ Open it once to confirm it launches. That's it for now.
 
 ---
 
-## 3. Install Command Line Tools
+## 3. Meet your Terminal
 
-> Skip this step if already installed. To check, open Terminal
-> (press `Cmd + Space`, type "Terminal", press Enter) and run `xcode-select -p`.
-> If you see a path like `/Library/Developer/CommandLineTools`, skip to step 4.
+The rest of the steps use Terminal — Mac's built-in command-line app. You'll
+see it referenced a lot in this workshop, so it's worth a 60-second tour.
 
-In Terminal, paste this and press Enter:
+Open Terminal: press `Cmd + Space`, type "Terminal", press Enter.
+
+You'll see a prompt like this:
+
+```
+yourname@your-mac ~ %
+```
+
+That's:
+- `yourname` — your Mac user
+- `your-mac` — your computer's name
+- `~` — the folder you're currently in (here it's your **home folder** — the
+  one named with your username. In Finder you can open it from the sidebar
+  or with `Cmd + Shift + H`)
+- `%` — where you type your command
+
+**How commands work:** type or paste a command after the `%`, then press Enter
+to run it. The output appears below.
+
+**Password prompts:** some commands (the ones starting with `sudo`) ask for
+your Mac password. **The password won't appear as you type it — not even
+asterisks.** That's normal. Just type it blind and press Enter.
+
+> **Tip:** Whenever this checklist shows a code block like `claude --version`,
+> just paste it into Terminal and press Enter.
+
+---
+
+## 4. Install Command Line Tools
+
+> Skip this step if already installed. To check, run `xcode-select -p` in
+> Terminal. If you see a path like `/Library/Developer/CommandLineTools`,
+> skip to step 5.
+
+In Terminal:
 
 ```
 xcode-select --install
 ```
 
-A popup will appear asking to install Command Line Tools — click **Install**, then agree to the license. This can take a few minutes.
+A popup will appear asking to install Command Line Tools — click **Install**,
+then agree to the license. This can take a few minutes.
 
 ---
 
-## 4. Install Node.js
+## 5. Install Node.js
 
-> Skip this step if you already have Node.js installed. To check, open Terminal
-> (press `Cmd + Space`, type "Terminal", press Enter) and run `node --version`.
-> If you see a version number, skip to step 5.
+> Skip this step if you already have Node.js installed. To check, run
+> `node --version` in Terminal. If you see a version number, skip to step 6.
 
-1. Go to: https://nodejs.org
-2. Download the **LTS** version (the left button)
-3. Run the installer
-4. Open Terminal (or restart it if it was already open)
-5. Verify it worked:
+1. Go to https://nodejs.org/en/download
+2. On the download page, set these dropdowns:
+   - **Version:** Latest LTS Version
+   - **Operating System:** macOS
+   - **Architecture:** **ARM64** for Apple Silicon Macs (M1/M2/M3/M4 — most
+     Macs from 2020 onward) or **x64** for older Intel Macs. Not sure?
+     Click the Apple menu → **About This Mac**. The "Chip" or "Processor"
+     line tells you.
+   - **Installer:** Prebuilt Installer
+3. Click the download button
+4. Run the `.pkg` file that downloads
+5. Open a fresh Terminal window and verify it worked:
 
 ```
 node --version
@@ -59,18 +99,21 @@ You should see a version number like `v22.x.x`.
 
 ---
 
-## 5. Install Claude Code CLI
+## 6. Install Claude Code CLI
 
-In Terminal, paste this command and press Enter:
+You installed the VSCode extension in step 2, but it only works inside VSCode.
+This step installs the standalone `claude` command so you can also use Claude
+Code in any Terminal window. You need both.
+
+In Terminal:
 
 ```
 sudo npm install -g @anthropic-ai/claude-code
 ```
 
-You'll be asked for your Mac password — this is normal. Type it and press Enter.
-The password won't show as you type — that's also normal, just type it blind.
+You'll be asked for your Mac password (silent typing — see step 3).
 
-Then verify it worked:
+Verify it worked:
 
 ```
 claude --version
@@ -80,7 +123,30 @@ You should see a version number. If you see an error, message [facilitator].
 
 ---
 
-## 6. Install pnpm
+## 7. Log in to Claude
+
+Now log in to your Claude account from the CLI. In Terminal:
+
+```
+claude
+```
+
+This starts Claude Code. The first time you run it, it asks you to log in.
+
+1. Pick the option that uses your Anthropic account with subscription access
+2. Pick **Continue with SSO** and use your Perforce email (`@perforce.com`)
+3. A browser window opens — log in there
+4. The browser shows a code or a URL — copy it back into Terminal and press Enter
+5. Terminal shows "Logged in as ..." when it's done
+
+Type `/exit` and press Enter to close CC for now.
+
+> **Tip:** If the browser doesn't open or login fails, run `claude` again
+> and retry. If you keep getting stuck, message [facilitator].
+
+---
+
+## 8. Install pnpm
 
 In Terminal:
 
@@ -98,10 +164,10 @@ You should see a version number like `9.x.x`.
 
 ---
 
-## 7. Install Homebrew
+## 9. Install Homebrew
 
 > Skip this step if already installed. To check, run `brew --version` in Terminal.
-> If you see a version number, skip to step 8.
+> If you see a version number, skip to step 10.
 
 In Terminal, paste this and press Enter:
 
@@ -119,7 +185,7 @@ brew --version
 
 ---
 
-## 8. Install GitHub CLI
+## 10. Install GitHub CLI
 
 In Terminal:
 
@@ -135,14 +201,14 @@ gh --version
 
 ---
 
-## 9. Create a GitHub account
+## 11. Create a GitHub account
 
 Go to https://github.com and sign up if you don't have an account.
 Remember your username and the email you used.
 
 ---
 
-## 10. Authenticate GitHub CLI
+## 12. Authenticate GitHub CLI
 
 In Terminal:
 
@@ -159,7 +225,7 @@ When it says "Logged in as [your username]" — you're done.
 
 ---
 
-## 11. Configure git identity
+## 13. Configure git identity
 
 In Terminal (replace with your actual name and GitHub email):
 
